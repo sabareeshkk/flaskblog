@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>BLOG YOUR WORLD TO BECOME REALITY</h1><br>
+	<p>click <a href='/'>here</a>view posts</p><br>
+	<form action="" method='post'>
+		<dl>
+			<dt>Title:
+			<dd><input type='text' placeholder='title' name='head' value="" ='{{request.form.title}}'><br><br>
+			<dt>Description:
+			<dd><textarea name="text" rows="5" cols="50" >enter the description</textarea><br><br>
+			<dd><input class='btn btn-default' type='submit' value='share'><br>
+		</dl>
+	</form>
+	{% for message in get_flashed_messages() %}
+		{{message}}
+	{% endfor %}
+
+{% endblock %}
+
+
+
